@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Button = props => (
-    <div>
-        button
+    <div className="button">
+        {props.children}
     </div>
 )
 
