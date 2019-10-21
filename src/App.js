@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from './components/Buttons';
 import Result from './components/Result';
-import Clear from './components/Clear'
 import './App.css';
 import * as math from 'mathjs';
 
@@ -34,9 +33,6 @@ function App() {
           <Button>0</Button>
           <Button>.</Button>
           <Button>-</Button>
-        </div>
-        <div className="row">
-          <Clear handleClear={() => this.setState({result: ""})}>Clear</Clear>
         </div>
       </div>
     </div>

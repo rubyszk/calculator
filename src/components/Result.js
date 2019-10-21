@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Result = props => (
-    <div>
-        result
+    <div className="result">
     </div>
 )
 
