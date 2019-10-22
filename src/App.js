@@ -5,38 +5,51 @@ import './App.css';
 import * as math from 'mathjs';
 
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: ""
+    }
+  }
+
+  calculate = (nums) => {
+    this.setState({result: this.state.result + nums })
+  }
+  
+  render() {
   return (
     <div className="App">
-      <Result/>
+      <Result result={this.state.result}/>
       <div className="calculator">
       <div className="row">
-          <Button>7</Button>
-          <Button>8</Button>
-          <Button>9</Button>
-          <Button>/</Button>
+          <Button handleClick={this.calculate}>7</Button>
+          <Button handleClick={this.calculate}>8</Button>
+          <Button handleClick={this.calculate}>9</Button>
+          <Button handleClick={this.calculate} >/</Button>
         </div>
         <div className="row">
-          <Button>4</Button>
-          <Button>5</Button>
-          <Button>6</Button>
-          <Button>x</Button>
+          <Button handleClick={this.calculate}>4</Button>
+          <Button handleClick={this.calculate}>5</Button>
+          <Button handleClick={this.calculate}>6</Button>
+          <Button handleClick={this.calculate}>*</Button>
         </div>
         <div className="row">
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
-          <Button>/+</Button>
+          <Button handleClick={this.calculate}>1</Button>
+          <Button handleClick={this.calculate}>2</Button>
+          <Button handleClick={this.calculate}>3</Button>
+          <Button handleClick={this.calculate}>-</Button>
         </div>
         <div className="row">
-          <Button>c</Button>
-          <Button>0</Button>
-          <Button>.</Button>
-          <Button>-</Button>
+          <Button handleClear={() => this.setState({ result : ""})}>c</Button>
+          <Button handleClick={this.calculate}>0</Button>
+          <Button>=</Button>
+          <Button handleClick={this.calculate}>+</Button>
         </div>
       </div>
     </div>
   );
+  }
 }
 
 export default App;
