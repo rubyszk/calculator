@@ -2,9 +2,8 @@ import React from 'react';
 import Button from './components/Buttons';
 import Result from './components/Result';
 import './App.css';
-// import * as math from 'mathjs';
-
 const math = require('mathjs')
+
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +24,24 @@ class App extends React.Component {
   equal = () => {
     this.setState({result: eval(this.state.result)})
   }
+
+  // keys = (key) => {
+
+  //   const keydown = event => {
+  //     if(event) {
+  //       this.setState({result: this.state.result + nums })
+  //     }
+  //   }
+  //    useEffect(() => {
+  //      window.addEventListener("keydown", keydown)
+  //      return() => {
+  //        window.removeEventListener("keydown", keydown)
+  //      }
+  //    })
+  // }
+
   
+
   render() {
   return (
     <div className="App">
@@ -53,7 +69,7 @@ class App extends React.Component {
           <Button handleClick={this.clear}>c</Button>
           <Button handleClick={this.calculate}>0</Button>
           <Button handleClick={this.equal}>=</Button>
-          <Button handleClick={this.calculate}>+</Button>
+          <Button id="symbol" handleClick={this.calculate}>+</Button>
         </div>
       </div>
     </div>
