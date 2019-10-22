@@ -2,8 +2,9 @@ import React from 'react';
 import Button from './components/Buttons';
 import Result from './components/Result';
 import './App.css';
-import * as math from 'mathjs';
+// import * as math from 'mathjs';
 
+const math = require('mathjs')
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +20,10 @@ class App extends React.Component {
 
   clear = (nums) => {
     this.setState({result: ""})
+  }
+
+  equal = () => {
+    this.setState({result: eval(this.state.result)})
   }
   
   render() {
@@ -47,7 +52,7 @@ class App extends React.Component {
         <div className="row">
           <Button handleClick={this.clear}>c</Button>
           <Button handleClick={this.calculate}>0</Button>
-          <Button>=</Button>
+          <Button handleClick={this.equal}>=</Button>
           <Button handleClick={this.calculate}>+</Button>
         </div>
       </div>
