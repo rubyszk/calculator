@@ -2,7 +2,7 @@
 # [React Calculator](https://happy-mccarthy-0f4a53.netlify.com)
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses the [Math.js Library](https://mathjs.org/).
 
 ## Available Scripts
 
