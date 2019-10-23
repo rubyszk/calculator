@@ -15,6 +15,9 @@ class App extends React.Component {
 
   calculate = (nums) => {
     this.setState({result: this.state.result + nums })
+    // if (err) {
+    //   console.log(error)
+    // }
   }
 
   clear = (nums) => {
@@ -40,12 +43,10 @@ class App extends React.Component {
   //    })
   // }
 
-  
-
   render() {
   return (
     <div className="App">
-      <Result result={this.state.result}/>
+          <Result result={this.state.result}/>
       <div className="calculator">
       <div className="row">
           <Button handleClick={this.calculate}>7</Button>
@@ -69,7 +70,7 @@ class App extends React.Component {
           <Button handleClick={this.clear}>c</Button>
           <Button handleClick={this.calculate}>0</Button>
           <Button handleClick={this.equal}>=</Button>
-          <Button id="symbol" handleClick={this.calculate}>+</Button>
+          <Button handleClick={this.calculate}>+</Button>
         </div>
       </div>
     </div>
