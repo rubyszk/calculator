@@ -15,17 +15,20 @@ class App extends React.Component {
 
   calculate = (nums) => {
     this.setState({result: this.state.result + nums })
-    // if (err) {
-    //   console.log(error)
-    // }
   }
 
   clear = (nums) => {
     this.setState({result: ""})
   }
 
-  equal = () => {
-    this.setState({result: eval(this.state.result)})
+  equal = (nums) => {
+    try {
+      this.setState({result: eval(this.state.result)})
+    } catch (e){
+      if (e) {
+        this.setState({result: 'error'})
+      }
+    }
   }
 
   // keys = (key) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css'
+import '../App.css'
 
 const borderRadius = sym => {
     return !isNaN(sym) 
