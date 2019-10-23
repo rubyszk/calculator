@@ -17,22 +17,18 @@ class App extends React.Component {
     this.setState({result: this.state.result + nums })
   }
 
-  clear = (nums) => {
+  clear = () => {
     this.setState({result: ""})
   }
 
-  equal = (nums) => {
+  equal = () => {
     try {
       this.setState({result: eval(this.state.result)})
-    } catch (err){
+    } catch (err) {
       if (err) {
         this.setState({result: 'error'})
       }
     }
-  }
-
-  componentDidMount() {
-      document.addEventListener('keydown', this.keyDown.bind(this));
   }
 
   keyDown(props) {
@@ -47,10 +43,16 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('keydown', this.keyDown.bind(this));
+  }
+
   render() {
   return (
     <div className="App">
-          <Result result={this.state.result}/>
+      <div className="top">
+        <Result result={this.state.result}/>
+      </div>
       <div className="calculator">
       <div className="row">
           <Button handleClick={this.calculate}>7</Button>

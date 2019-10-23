@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-.calculator {
-  font-family: 'Lato', sans-serif;
-  width: 400px;
-  height: 600px;
-}
-
-.row {
-  display: flex;
-  width: 100%;
-  box-shadow: 5px 5px 8px grey;
-}
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -24,6 +12,22 @@ body {
   margin-top: 3em;
   background: url('gradient.png');
   background-size: fill;
+}
+
+.App {
+  margin-left: 3em;
+}
+
+.calculator {
+  font-family: 'Lato', sans-serif;
+  width: 400px;
+  height: 600px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  box-shadow: 5px 5px 8px grey;
 }
 
 .button {
@@ -63,4 +67,19 @@ body {
 
 .sym:hover {
   color: lightcyan;
+}
+
+@media only screen and (max-width: 500px)  {
+  .App {
+     margin: 0 auto;
+
+  } 
+
+  .result {
+    width: 75%;
+  }
+  .calculator {
+    width: 75%;
+  }
+
 }
