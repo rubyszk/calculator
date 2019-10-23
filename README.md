@@ -1,6 +1,5 @@
 
-# Live link to the project here
-[React Calculator](https://happy-mccarthy-0f4a53.netlify.com)
+# [React Calculator](https://happy-mccarthy-0f4a53.netlify.com)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
