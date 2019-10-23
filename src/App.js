@@ -24,27 +24,28 @@ class App extends React.Component {
   equal = (nums) => {
     try {
       this.setState({result: eval(this.state.result)})
-    } catch (e){
-      if (e) {
+    } catch (err){
+      if (err) {
         this.setState({result: 'error'})
       }
     }
   }
 
-  // keys = (key) => {
+  componentDidMount() {
+      document.addEventListener('keydown', this.keyDown.bind(this));
+  }
 
-  //   const keydown = event => {
-  //     if(event) {
-  //       this.setState({result: this.state.result + nums })
-  //     }
-  //   }
-  //    useEffect(() => {
-  //      window.addEventListener("keydown", keydown)
-  //      return() => {
-  //        window.removeEventListener("keydown", keydown)
-  //      }
-  //    })
-  // }
+  keyDown(props) {
+    if (props.key === '1'|| props.key === '2' || props.key === '3'|| props.key === '4' || props.key === '5'|| props.key === '6'|| props.key === '7' || props.key === '8' || props.key === '9' || props.key === '0' || props.key === '+' || props.key === '-' || props.key === '*' || props.key === '/' ) {
+      this.setState({result: this.state.result + props.key })
+    } else if (props.key === 'c') {
+      this.clear();
+    } else if (props.key === 'Backspace') {
+      this.setState({result: this.state.result.slice(0, -1)})
+    } else if (props.key === 'Enter') {
+      this.equal();
+    }
+  }
 
   render() {
   return (
